@@ -45,8 +45,8 @@
 
 /* Sidebar (same as before, just makes sure it fills the height) */
 .sidebar {
-  width: 220px;
-  background-color: #1e1e2f;
+  width: 200px;
+  background-color: rgb(51, 51, 51);
   color: white;
   padding: 20px;
   display: flex;
