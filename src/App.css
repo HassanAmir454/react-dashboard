@@ -36,3 +36,42 @@
     transform: rotate(360deg);
   }
 }
+.footer {
+  background: linear-gradient(90deg, #4b6cb7, #182848);
+  color: white;
+  text-align: center;
+  padding: 15px 10px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-family: "Comic Sans MS", sans-serif;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1s ease-in;
+}
+
+.footer .heart {
+  color: #ff4b5c;
+  transition: transform 0.3s ease;
+}
+
+.footer .heart:hover {
+  transform: scale(1.2);
+}
+
+.footer .year {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-top: 5px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
