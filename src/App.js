@@ -1,28 +1,31 @@
 import React from "react";
 import Sidebar from "./Sidebar/Sidebar";
 import ChartComponent from "./ChartComponent/ChartComponent";
-import Footer from "./Footer/Footer"; 
+import Footer from "./Footer/Footer";
+import "./App.css"; // ✅ make sure this line is here
 
 function App() {
   return (
-    <div style={{ display: "flex" }}>
-      
-      {/* Left Sidebar */}
-       <Sidebar />
+    <div className="app">
+      {/* Left Sidebar (fixed) */}
+      <div className="sidebar">
+        <Sidebar />
+      </div>
 
       {/* Main Content */}
-      <div style={{ padding: "20px", flex: 1 }}>
+      <div className="main-content">
         <h1>Welcome!</h1>
-        <p>This is your main content area with a chart:</p>
+        <p>This is your main content area with charts below:</p>
 
-      {/* Chart */}
-       <ChartComponent />
+        {/* Chart Component */}
+        <ChartComponent />
 
-      {/* Footer */ }
-       <Footer/>
+        {/* Footer (only appears at the end when scrolling) */}
+        <Footer />
       </div>
     </div>
   );
 }
 
 export default App;
+
