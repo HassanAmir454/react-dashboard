@@ -2,12 +2,12 @@ import React from "react";
 import Sidebar from "./Sidebar/Sidebar";
 import ChartComponent from "./ChartComponent/ChartComponent";
 import Footer from "./Footer/Footer";
-import "./App.css"; // ✅ make sure this line is here
+import "./App.css"; // ✅ important
 
 function App() {
   return (
     <div className="app">
-      {/* Left Sidebar (fixed) */}
+      {/* Left Sidebar */}
       <div className="sidebar">
         <Sidebar />
       </div>
@@ -17,10 +17,10 @@ function App() {
         <h1>Welcome!</h1>
         <p>This is your main content area with charts below:</p>
 
-        {/* Chart Component */}
+        {/* Chart */}
         <ChartComponent />
 
-        {/* Footer (only appears at the end when scrolling) */}
+        {/* Footer — only at bottom after scroll */}
         <Footer />
       </div>
     </div>
@@ -28,4 +28,5 @@ function App() {
 }
 
 export default App;
+
 

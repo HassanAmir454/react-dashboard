@@ -1,3 +1,4 @@
+/* Default React App Styles */
 .App {
   text-align: center;
 }
@@ -37,9 +38,9 @@
   }
 }
 
-/* === Dashboard Layout Styling === */
+/* === Dashboard Layout (Sidebar + Chart + Footer) === */
 
-/* Whole app wrapper */
+/* Whole app layout */
 .app {
   display: flex;
   min-height: 100vh;
@@ -47,37 +48,33 @@
   font-family: Arial, sans-serif;
 }
 
-/* Sidebar on the left (fixed in place) */
+/* Sidebar (left side, full height, not fixed) */
 .sidebar {
   width: 220px;
   background-color: #1e1e2f;
   color: white;
   padding: 20px;
-  position: fixed; /* Keeps sidebar always visible */
-  top: 0;
-  bottom: 0;
-  left: 0;
-  overflow-y: auto; /* Scroll inside sidebar if needed */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* ensures it stretches to bottom */
 }
 
-/* Main content area (moves to right of sidebar) */
+/* Main content area */
 .main-content {
-  margin-left: 220px; /* same width as sidebar */
   flex: 1;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
   background-color: #f5f6fa;
   padding: 20px;
-  overflow-y: auto;
+  min-height: 100vh;
 }
 
-/* Make chart/content take up space above footer */
+/* Keeps footer at the bottom, content above it */
 .main-content > *:not(footer) {
   flex: 1;
 }
 
-/* Footer section — appears only when scrolling to end */
+/* Footer styling (only at end when scrolling) */
 footer {
   background-color: #f0f0f0;
   padding: 15px;
@@ -85,3 +82,4 @@ footer {
   color: #333;
   border-top: 1px solid #ddd;
 }
+
