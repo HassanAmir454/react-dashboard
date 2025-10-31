@@ -38,17 +38,12 @@
   }
 }
 
-/* === Dashboard Layout (Sidebar + Chart + Footer) === */
-
-/* Whole app layout */
 .app {
   display: flex;
   min-height: 100vh;
-  background-color: #f5f6fa;
-  font-family: Arial, sans-serif;
 }
 
-/* Sidebar (left side, full height, not fixed) */
+/* Sidebar (same as before, just makes sure it fills the height) */
 .sidebar {
   width: 220px;
   background-color: #1e1e2f;
@@ -56,10 +51,9 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* ensures it stretches to bottom */
 }
 
-/* Main content area */
+/* Main area takes the rest of the space */
 .main-content {
   flex: 1;
   display: flex;
@@ -69,12 +63,12 @@
   min-height: 100vh;
 }
 
-/* Keeps footer at the bottom, content above it */
+/* Pushes footer to bottom */
 .main-content > *:not(footer) {
   flex: 1;
 }
 
-/* Footer styling (only at end when scrolling) */
+/* Footer only shows at end (not fixed) */
 footer {
   background-color: #f0f0f0;
   padding: 15px;
@@ -82,4 +76,3 @@ footer {
   color: #333;
   border-top: 1px solid #ddd;
 }
-
