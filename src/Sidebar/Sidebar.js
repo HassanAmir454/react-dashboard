@@ -4,7 +4,7 @@ import "./Sidebar.css";
 function Sidebar() {
   return (
     <div className="sidebar">
-      <h2>My App</h2>
+      <h2>Hassan's Dashboard</h2>
       <ul>
         <li>Home</li>
         <li>Profile</li>

@@ -1,0 +1,117 @@
+/* Header layout */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #26a0fc;
+  padding: 10px 20px;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Logo */
+.logo {
+  height: 40px;
+  cursor: pointer;
+}
+
+/* Center search bar */
+.header-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar {
+  width: 45%;
+  max-width: 600px;
+  padding: 10px 15px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #333;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.search-bar:focus {
+  width: 65%;
+  box-shadow: 0 0 10px #4a90e2;
+}
+
+/* Right section: login and menu */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Login button */
+.login-btn {
+  background-color: #ff4500;
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background-color: #ff6700;
+}
+
+/* Menu button (three dots) */
+.menu-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Dropdown menu */
+.menu-container {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 30px;
+  background-color: #2a2a40;
+  color: white;
+  border-radius: 8px;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  width: 180px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.dropdown-menu li {
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dropdown-menu li:hover {
+  background-color: #3b3b5a;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

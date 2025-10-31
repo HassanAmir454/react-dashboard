@@ -1,32 +1,31 @@
 import React from "react";
+import Header from "./Header/Header";   // ✅ add this line
 import Sidebar from "./Sidebar/Sidebar";
 import ChartComponent from "./ChartComponent/ChartComponent";
 import Footer from "./Footer/Footer";
-import "./App.css"; // ✅ important
+import "./App.css";
 
 function App() {
   return (
-    <div className="app">
-      {/* Left Sidebar */}
-      <div className="sidebar">
+    <div>
+      {/* Header on top */}
+      <Header />
+
+      {/* Main layout: sidebar + content */}
+      <div className="app">
         <Sidebar />
-      </div>
-
-      {/* Main Content */}
-      <div className="main-content">
-        <h1>Welcome!</h1>
-        <p>This is your main content area with charts below:</p>
-
-        {/* Chart */}
-        <ChartComponent />
-
-        {/* Footer — only at bottom after scroll */}
-        <Footer />
+        <div className="main-content">
+          <h1>Welcome!</h1>
+          <p>This is your main content area with a chart:</p>
+          <ChartComponent />
+          <Footer />
+        </div>
       </div>
     </div>
   );
 }
 
 export default App;
+
 
 
