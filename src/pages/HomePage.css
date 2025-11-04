@@ -1,0 +1,101 @@
+.home-container {
+  padding: 20px;
+}
+
+.home-container h1 {
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.home-container p {
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* Info Cards */
+.home-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.card {
+  background: white;
+  flex: 1;
+  min-width: 150px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.card p {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #26a0fc;
+}
+
+/* Charts */
+.charts-home {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.chart-box {
+  flex: 1;
+  min-width: 300px;
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* Quick Stats */
+.quick-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.stat-card {
+  background: #f7f9fc;
+  flex: 1;
+  min-width: 150px;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Light mode (default) */
+.home-container h1,
+.home-container h3,
+.home-container h4,
+.home-container p {
+  color: #333; /* default dark text */
+}
+
+/* Dark mode text */
+.app.dark .home-container h1,
+.app.dark .home-container h3,
+.app.dark .home-container h4,
+.app.dark .home-container p {
+  color: white; /* headings and text become white */
+}

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Chart from "react-apexcharts";
 import "./ChartComponent.css"; // We'll style it next
+import { motion } from "framer-motion";
+
 
 class ChartComponent extends Component {
   constructor(props) {
@@ -26,57 +28,95 @@ class ChartComponent extends Component {
         chart: { id: "bar-chart" },
         xaxis: { categories: ["Mon", "Tue", "Wed", "Thu", "Fri"] },
       },
-      barSeries: [
-        { name: "Visitors", data: [120, 200, 150, 80, 70] },
-      ],
+      barSeries: [{ name: "Visitors", data: [120, 200, 150, 80, 70] }],
 
       // Chart 3 (Donut chart)
       donutOptions: {
         labels: ["Apples", "Bananas", "Oranges", "Grapes"],
       },
       donutSeries: [44, 55, 13, 33],
+
+      pieOptions: {
+        labels: ["Chrome", "Firefox", "Edge", "Safari"],
+      },
+      pieSeries: [55, 30, 10, 5],
     };
   }
 
   render() {
     return (
       <div className="charts-container">
-        {/* Chart 1 - Area */}
-        <div className="chart-box">
-          <h3>📈 Growth Over Time</h3>
-          <Chart
-            options={this.state.areaOptions}
-            series={this.state.areaSeries}
-            type="area"
-            width="400"
-          />
-        </div>
 
-        {/* Chart 2 - Bar */}
-        <div className="chart-box">
-          <h3>📊 Weekly Visitors</h3>
-          <Chart
-            options={this.state.barOptions}
-            series={this.state.barSeries}
-            type="bar"
-            width="400"
-          />
-        </div>
+  {/* Chart 1 - Area */}
+  <motion.div 
+    className="chart-box"
+    initial={{ opacity: 0, y: 30 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8, delay: 0.2 }}
+  >
+    <h3>📈 Growth Over Time</h3>
+    <Chart
+      options={this.state.areaOptions}
+      series={this.state.areaSeries}
+      type="area"
+      width="400"
+    />
+  </motion.div>
 
-        {/* Chart 3 - Donut */}
-        <div className="chart-box">
-          <h3>🍩 Fruit Sales</h3>
-          <Chart
-            options={this.state.donutOptions}
-            series={this.state.donutSeries}
-            type="donut"
-            width="400"
-          />
-        </div>
-      </div>
+  {/* Chart 2 - Bar */}
+  <motion.div 
+    className="chart-box"
+    initial={{ opacity: 0, y: 30 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8, delay: 0.4 }}
+  >
+    <h3>📊 Weekly Visitors</h3>
+    <Chart
+      options={this.state.barOptions}
+      series={this.state.barSeries}
+      type="bar"
+      width="400"
+    />
+  </motion.div>
+
+  {/* Chart 3 - Donut */}
+  <motion.div 
+    className="chart-box"
+    initial={{ opacity: 0, y: 30 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8, delay: 0.6 }}
+  >
+    <h3>🍩 Fruit Sales</h3>
+    <Chart
+      options={this.state.donutOptions}
+      series={this.state.donutSeries}
+      type="donut"
+      width="400"
+    />
+  </motion.div>
+
+  {/* Chart 4 - Pie */}
+  <motion.div 
+    className="chart-box"
+    initial={{ opacity: 0, y: 30 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8, delay: 0.8 }}
+  >
+    <h3>🥧 Browser Usage</h3>
+    <Chart
+      options={this.state.pieOptions}
+      series={this.state.pieSeries}
+      type="pie"
+      width="400"
+    />
+  </motion.div>
+
+</div>
+
     );
   }
 }
 
 export default ChartComponent;
+
 

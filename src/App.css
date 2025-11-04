@@ -78,3 +78,68 @@ footer {
   color: #333;
   border-top: 1px solid #ddd;
 }
+
+/* Light mode styles (your existing styles) */
+.app {
+  background-color: #f0f2f5; /* light background */
+  color: #333; /* dark text */
+}
+
+/* Dark mode styles */
+.app.dark {
+  background-color: #1e1e2f; /* dark background */
+  color: #f0f0f0; /* light text */
+}
+
+/* Optional: make links look better in dark mode */
+.app.dark a {
+  color: #4ea8ff;
+}
+
+/* Optional: make sidebar dark too */
+.app.dark .sidebar {
+  background-color: #2c2c3c;
+  color: #f0f0f0;
+}
+
+.app.dark .sidebar li:hover {
+  background-color: #44475a;
+}
+
+/* Optional: main content dark adjustments */
+.app.dark .main-content {
+  background-color: #2c2c3c;
+}
+
+/* Footer dark mode */
+.app.dark footer {
+  background-color: #1e1e2f;
+  color: #f0f0f0;
+}
+
+
+/* Light mode default styles already exist */
+
+.dark-mode {
+  background-color: #1e1e2f; /* dark background */
+  color: white;              /* text white */
+}
+
+/* Example: adjust Sidebar */
+.dark-mode .sidebar {
+  background-color: #2c2c3c;
+  color: white;
+}
+
+/* HomePage dark */
+.dark-mode .home-container,
+.dark-mode .settings-container {
+  background-color: #2c2c3c;
+  color: white;
+}
+
+/* Footer dark */
+.dark-mode .footer {
+  background-color: #1b1b2a;
+  color: white;
+}

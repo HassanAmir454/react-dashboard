@@ -115,3 +115,48 @@
     transform: translateY(0);
   }
 }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #26a0fc;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.dark-toggle {
+  background-color: white;
+  color: #26a0fc;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.dark-toggle:hover {
+  opacity: 0.8;
+}
+
+/* Dark mode styles for header */
+.app.dark .header {
+  background-color: #2c2c3c;
+  color: #f0f0f0;
+}
+
+.app.dark .dark-toggle {
+  background-color: #26a0fc;
+  color: white;
+}
+
+.app.dark .header {
+  background-color: #2c2c3c;
+  color: #f0f0f0;
+}
+
+.app.dark .dark-toggle {
+  background-color: #4ea8ff;
+  color: white;
+}

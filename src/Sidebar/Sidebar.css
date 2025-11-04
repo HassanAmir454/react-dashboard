@@ -25,3 +25,156 @@
 .sidebar li:hover {
   background-color: #26a0fc;
 }
+
+/* --- Upload History Section --- */
+.history-section {
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.history-toggle {
+  background-color: #0078ff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  font-size: 14px;
+}
+
+.history-toggle:hover {
+  background-color: #005fcc;
+}
+
+.history-list {
+  margin-top: 10px;
+  background: #e3f2ff;
+  border-radius: 8px;
+  padding: 10px;
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+.history-item {
+  background: white;
+  padding: 8px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.history-item strong {
+  display: block;
+  color: #333;
+  font-size: 14px;
+}
+
+.history-item small {
+  color: #555;
+  font-size: 12px;
+}
+
+/* Highlight active menu item */
+.sidebar li.active {
+  background-color: #26a0fc;
+  font-weight: bold;
+}
+
+/* Upload history scrollable */
+.history-list {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-top: 10px;
+  padding-right: 5px;
+}
+
+/* Default Sidebar link style */
+.sidebar ul li a {
+  color: #fff;          /* white text */
+  text-decoration: none; /* remove underline */
+  display: block;        /* makes the entire li clickable */
+  padding: 10px 0;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Hover effect for links */
+.sidebar ul li a:hover {
+  background-color: #26a0fc;
+  color: white;
+}
+
+/* Dark mode support if needed */
+.app.dark .sidebar ul li a {
+  color: white;
+}
+
+
+
+
+
+/* Make li normal, link handles hover */
+.sidebar ul li {
+  padding: 0; /* remove padding from li */
+}
+
+.sidebar ul li a {
+  color: #fff;              /* white text */
+  text-decoration: none;     /* remove underline */
+  display: inline-block;     /* only wraps text */
+  padding: 10px 0;           /* optional, space above/below text */
+  transition: color 0.3s;
+}
+
+/* Hover effect only on text */
+/* .sidebar ul li a:hover {
+  color: #26a0fc; /* change text color on hover */
+/* } */ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Sidebar ul */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Sidebar li styling */
+.sidebar ul li {
+  height: 40px;               /* short box height */
+  display: flex;               /* use flex for alignment */
+  align-items: center;         /* vertical center */
+  justify-content: center;     /* horizontal center */
+  margin: 5px 0;               /* small spacing between items */
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Hover effect only */
+.sidebar ul li:hover {
+  color: #26a0fc;
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,59 @@
+/* UploadHistory.css */
+
+.history-panel {
+  position: fixed;
+  right: 0;
+  top: 70px; /* push it down below header */
+  height: calc(100vh - 70px); /* adjust height */
+  width: 320px;
+  background: #ffffff;
+  border-left: 2px solid #e0e0e0;
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out;
+  overflow-y: auto;
+  z-index: 9999; /* make sure it's on top of everything */
+}
+
+
+.history-panel.hidden {
+  transform: translateX(100%);
+}
+
+.toggle-btn {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  background-color: #0078ff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 11;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-btn:hover {
+  background-color: #005fcc;
+}
+
+.upload-item {
+  border: 1px solid #eee;
+  background: #f8f8f8;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.upload-item:hover {
+  background: #eef5ff;
+}
+
+.upload-item strong {
+  font-size: 14px;
+  display: block;
+}
