@@ -175,3 +175,42 @@ input:checked + .slider:before {
     font-size: 0.9rem;
   }
 }
+/* Dark mode text color in settings page */
+.app.dark-mode .settings-container,
+.app.dark-mode .settings-container .settings-box,
+.app.dark-mode .settings-container .settings-box label,
+.app.dark-mode .settings-container .settings-box p,
+.app.dark-mode .settings-container .settings-box h3,
+.app.dark-mode .settings-container .checkbox-group label {
+  color: black; /* only changes text color */
+}
+/* Dark mode text color in all settings boxes, including checkbox labels */
+.app.dark-mode .settings-container .settings-box,
+.app.dark-mode .settings-container .settings-box label,
+.app.dark-mode .settings-container .settings-box p,
+.app.dark-mode .settings-container .settings-box h3,
+.app.dark-mode .settings-container .checkbox-group label {
+  color: black; /* only changes text color */
+}
+/* Ensure second box text remains unchanged */
+.app.dark-mode .settings-container .settings-box:nth-child(2) {
+  color: initial; /* keeps default text color */
+}
+
+
+
+/* Keep second box text black even in dark mode */
+.app.dark-mode .settings-container .settings-box:nth-child(2) {
+  color: black;
+}
+/* First box text in dark mode */
+.app.dark-mode .settings-container .settings-box:first-child {
+  color: white;
+}
+
+/* Second box text (including checkbox labels) stays black */
+.app.dark-mode .settings-container .settings-box:nth-child(2),
+.app.dark-mode .settings-container .settings-box:nth-child(2) label {
+  color: black !important;
+}
+

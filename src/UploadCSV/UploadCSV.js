@@ -6,6 +6,7 @@ import Chart from "react-apexcharts";
 function UploadCSV() {
   const [file, setFile] = useState(null);
   const [result, setResult] = useState(null);
+  const [aiData, setAIData] = useState(null); // <-- state for AI preview
   const [isLoading, setIsLoading] = useState(false);
 
   const handleFileChange = (e) => {
@@ -27,11 +28,12 @@ function UploadCSV() {
 
       const data = await response.json();
       setResult(data);
+      setAIData(data.ai_preview); // store AI preview
     } catch (err) {
       console.error("Upload error:", err);
       alert("Upload failed. Check backend or file.");
     } finally {
-      setTimeout(() => setIsLoading(false), 1500); // spinner shows 1.5s
+      setTimeout(() => setIsLoading(false), 1500);
     }
   };
 
@@ -39,7 +41,6 @@ function UploadCSV() {
   const getChartData = () => {
     if (!result || !result.summary) return { series: [], options: {} };
 
-    // Only numeric columns
     const numericColumns = Object.keys(result.summary).filter(
       (col) => result.summary[col].mean !== undefined
     );
@@ -108,6 +109,25 @@ function UploadCSV() {
             height={250}
             width="400"
           />
+
+          {/* AI Insights */}
+          {aiData && Object.keys(aiData).length > 0 && (
+            <div className="ai-preview-box">
+              <h3>🤖 AI Insights</h3>
+              <div className="ai-cards-container">
+                {Object.entries(aiData).map(([col, info], index) => (
+                  <div key={col} className="ai-card">
+                    <h4>{col}</h4>
+                    <p>Average: {info.average}</p>
+                    <p>Sum: {info.sum}</p>
+                    <p>Max: {info.max}</p>
+                    <p>Min: {info.min}</p>
+                    <p>Predicted Next: {info.predicted_next_value}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       )}
     </div>
@@ -115,3 +135,4 @@ function UploadCSV() {
 }
 
 export default UploadCSV;
+
