@@ -1,49 +1,18 @@
-/* Default React App Styles */
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
+/* App container */
 .app {
   display: flex;
   min-height: 100vh;
+  background-color: #f0f2f5;
+  color: #333;
 }
 
-/* Sidebar (same as before, just makes sure it fills the height) */
+/* Dark mode */
+.app.dark-mode {
+  background-color: #1e1e2f;
+  color: #f0f0f0;
+}
+
+/* Sidebar */
 .sidebar {
   width: 200px;
   background-color: #bde2fe;
@@ -51,95 +20,235 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* ✅ fills screen if content small */
-  height: auto;
+  min-height: 100vh;
+  transition: all 0.3s ease;
 }
 
-/* Main area takes the rest of the space */
+.sidebar.closed {
+  transform: translateX(-220px);
+}
+
+/* Sidebar menu */
+.sidebar h2 {
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px 0;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.sidebar ul li.active {
+  background-color: #26a0fc;
+  font-weight: bold;
+}
+
+.sidebar ul li a {
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 0;
+  transition: color 0.3s;
+}
+
+.sidebar ul li:hover a {
+  color: #26a0fc;
+}
+
+/* Upload history */
+.history-section {
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.history-toggle {
+  background-color: #0078ff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  font-size: 14px;
+}
+
+.history-toggle:hover {
+  background-color: #005fcc;
+}
+
+.history-list {
+  margin-top: 10px;
+  background: #e3f2ff;
+  border-radius: 8px;
+  padding: 10px;
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+.history-item {
+  background: white;
+  padding: 8px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.history-item strong { display: block; color: #333; font-size: 14px; }
+.history-item small { color: #555; font-size: 12px; }
+
+/* Wrapper for main content + footer */
+.main-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 100vh;
+}
+
+/* Main content */
 .main-content {
   flex: 1;
   display: flex;
   flex-direction: column;
   background-color: #f5f6fa;
   padding: 20px;
-  min-height: 100vh;
 }
 
-/* Pushes footer to bottom */
-.main-content > *:not(footer) {
-  flex: 1;
+/* Dark mode main content */
+.app.dark-mode .main-content {
+  background-color: #2c2c3c;
+  color: #f0f0f0;
 }
 
-/* Footer only shows at end (not fixed) */
+/* Charts */
+.charts-home {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.chart-box {
+  flex: 1 1 45%;
+  min-width: 300px;
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.app.dark-mode .chart-box {
+  background-color: #44475a;
+  color: #f0f0f0;
+}
+
+/* Cards */
+.home-cards, .quick-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.home-cards .card, .stat-card {
+  flex: 1 1 200px;
+  padding: 15px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.app.dark-mode .home-cards .card,
+.app.dark-mode .stat-card {
+  background-color: #44475a;
+  color: white;
+}
+
+/* Footer */
 footer {
   background-color: #f0f0f0;
   padding: 15px;
   text-align: center;
   color: #333;
   border-top: 1px solid #ddd;
+  flex-shrink: 0; /* Prevent footer shrinking */
 }
 
-/* Light mode styles (your existing styles) */
-.app {
-  background-color: #f0f2f5; /* light background */
-  color: #333; /* dark text */
-}
-
-/* Dark mode styles */
-.app.dark {
-  background-color: #1e1e2f; /* dark background */
-  color: #f0f0f0; /* light text */
-}
-
-/* Optional: make links look better in dark mode */
-.app.dark a {
-  color: #4ea8ff;
-}
-
-/* Optional: make sidebar dark too */
-.app.dark .sidebar {
-  background-color: #2c2c3c;
-  color: #f0f0f0;
-}
-
-.app.dark .sidebar li:hover {
-  background-color: #44475a;
-}
-
-/* Optional: main content dark adjustments */
-.app.dark .main-content {
-  background-color: #2c2c3c;
-}
-
-/* Footer dark mode */
-.app.dark footer {
+.app.dark-mode footer {
   background-color: #1e1e2f;
   color: #f0f0f0;
 }
 
-
-/* Light mode default styles already exist */
-
-.dark-mode {
-  background-color: #1e1e2f; /* dark background */
-  color: white;              /* text white */
-}
-
-/* Example: adjust Sidebar */
-.dark-mode .sidebar {
-  background-color: #2c2c3c;
+/* Home & Settings headings in dark mode */
+.app.dark-mode .home-container h1,
+.app.dark-mode .settings-container h1 {
   color: white;
 }
 
-/* HomePage dark */
-.dark-mode .home-container,
-.dark-mode .settings-container {
-  background-color: #2c2c3c;
-  color: white;
-}
+/* -------------------- Responsive -------------------- */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    font-size: 24px;
+    background: #26a0fc;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000;
+    cursor: pointer;
+  }
 
-/* Footer dark */
-.dark-mode .footer {
-  background-color: #1b1b2a;
-  color: white;
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transform: translateX(-220px);
+    transition: transform 0.3s ease;
+    z-index: 999;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  .charts-home {
+    flex-direction: column;
+  }
+
+  .chart-box, .home-cards .card, .stat-card {
+    flex: 1 1 100%;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-center {
+    width: 100%;
+    justify-content: flex-start;
+    margin: 10px 0;
+  }
 }

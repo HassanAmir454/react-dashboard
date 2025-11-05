@@ -130,3 +130,48 @@ input:checked + .slider:before {
 .app.dark .settings-container span {
   color: white; /* turns text white in dark mode */
 }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .settings-container {
+    padding: 15px;
+  }
+
+  .settings-card {
+    padding: 15px;
+  }
+
+  .profile-field input {
+    padding: 8px;
+  }
+
+  .toggle-field {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .save-btn {
+    width: 100%;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .settings-container h1 {
+    font-size: 1.4rem;
+  }
+
+  .settings-container p {
+    font-size: 0.9rem;
+  }
+
+  .settings-card h3 {
+    font-size: 1rem;
+  }
+
+  .profile-field label,
+  .toggle-field span {
+    font-size: 0.9rem;
+  }
+}

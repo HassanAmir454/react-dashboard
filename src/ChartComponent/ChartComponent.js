@@ -59,7 +59,7 @@ class ChartComponent extends Component {
       options={this.state.areaOptions}
       series={this.state.areaSeries}
       type="area"
-      width="400"
+      width="100%"
     />
   </motion.div>
 
@@ -75,7 +75,7 @@ class ChartComponent extends Component {
       options={this.state.barOptions}
       series={this.state.barSeries}
       type="bar"
-      width="400"
+      width="100%"
     />
   </motion.div>
 
@@ -91,7 +91,7 @@ class ChartComponent extends Component {
       options={this.state.donutOptions}
       series={this.state.donutSeries}
       type="donut"
-      width="400"
+      width="100%"
     />
   </motion.div>
 
@@ -107,7 +107,7 @@ class ChartComponent extends Component {
       options={this.state.pieOptions}
       series={this.state.pieSeries}
       type="pie"
-      width="400"
+      width="100%"
     />
   </motion.div>
 

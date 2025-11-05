@@ -8,14 +8,11 @@ const mockUploads = [
 ];
 
 export default function UploadHistory({ onSelect }) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen] = useState(false);
 
   return (
     <>
-      {/* Floating toggle button */}
-      <button className="toggle-btn" onClick={() => setIsOpen(!isOpen)}>
-        {isOpen ? "Close History" : "View Uploads"}
-      </button>
+      
 
       {/* Slide-out panel */}
       <div className={`history-panel ${isOpen ? "" : "hidden"}`}>

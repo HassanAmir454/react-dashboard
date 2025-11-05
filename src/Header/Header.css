@@ -9,23 +9,29 @@
   position: sticky;
   top: 0;
   z-index: 100;
+  flex-wrap: wrap; /* allows items to wrap on small screens */
+  width: 100%;      /* ensures full width */
+  box-sizing: border-box; /* include padding in width */
 }
 
 /* Logo */
 .logo {
   height: 40px;
   cursor: pointer;
+  flex-shrink: 0; /* prevent shrinking too much */
 }
 
 /* Center search bar */
 .header-center {
-  flex: 1;
+  flex: 1 1 auto;        /* grow and shrink properly */
   display: flex;
   justify-content: center;
+  margin: 10px 0;
+  min-width: 0;          /* prevents horizontal overflow */
 }
 
 .search-bar {
-  width: 45%;
+  width: 100%;            /* full width of parent */
   max-width: 600px;
   padding: 10px 15px;
   border-radius: 25px;
@@ -36,10 +42,12 @@
   background: #fff;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
+  box-sizing: border-box;
 }
 
 .search-bar:focus {
-  width: 65%;
+  width: 100%;
+  max-width: 600px;
   box-shadow: 0 0 10px #4a90e2;
 }
 
@@ -48,6 +56,8 @@
   display: flex;
   align-items: center;
   gap: 15px;
+  flex-shrink: 0;
+  flex-wrap: wrap; /* wrap buttons on small screens */
 }
 
 /* Login button */
@@ -91,8 +101,9 @@
   padding: 10px 0;
   margin: 0;
   width: 180px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
   animation: fadeIn 0.2s ease-in-out;
+  z-index: 1000;
 }
 
 .dropdown-menu li {
@@ -106,26 +117,30 @@
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-5px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
-  background-color: #26a0fc;
+/* Dark mode for header */
+.app.dark .header {
+  background-color: #2c2c3c;
+  color: #f0f0f0;
+}
+
+.app.dark .dark-toggle {
+  background-color: #4ea8ff;
   color: white;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
+.app.dark .dropdown-menu {
+  background-color: #3a3a4f;
+}
+
+.app.dark .dropdown-menu li:hover {
+  background-color: #505073;
+}
+
+/* Dark toggle button */
 .dark-toggle {
   background-color: white;
   color: #26a0fc;
@@ -140,23 +155,60 @@
   opacity: 0.8;
 }
 
-/* Dark mode styles for header */
-.app.dark .header {
-  background-color: #2c2c3c;
-  color: #f0f0f0;
+/* -------------------- Responsive Adjustments -------------------- */
+@media (max-width: 1024px) {
+  .search-bar {
+    max-width: 100%;
+  }
 }
 
-.app.dark .dark-toggle {
-  background-color: #26a0fc;
-  color: white;
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: stretch; /* full width elements */
+    padding: 10px 15px;
+  }
+
+  .header-center {
+    width: 100%;
+    justify-content: center;
+    margin: 10px 0;
+  }
+
+  .search-bar {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .header-right {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .login-btn {
+    padding: 6px 10px;
+    flex: 1 1 auto;
+  }
+
+  .menu-btn {
+    font-size: 20px;
+  }
 }
 
-.app.dark .header {
-  background-color: #2c2c3c;
-  color: #f0f0f0;
-}
+@media (max-width: 480px) {
+  .logo {
+    height: 35px;
+  }
 
-.app.dark .dark-toggle {
-  background-color: #4ea8ff;
-  color: white;
+  .search-bar {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .login-btn {
+    padding: 5px 8px;
+    font-size: 14px;
+  }
 }

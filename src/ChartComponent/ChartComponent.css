@@ -13,8 +13,40 @@
   margin: 10px;
   text-align: center;
   transition: transform 0.3s ease;
+  flex: 1 1 300px; /* responsive width */
 }
 
 .chart-box:hover {
   transform: translateY(-5px);
+}
+
+/* Responsive layout */
+@media (max-width: 1024px) {
+  .charts-container {
+    justify-content: center;
+  }
+
+  .chart-box {
+    flex: 1 1 45%; /* two per row on tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .charts-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+  }
+
+  .chart-box {
+    flex: 1 1 90%; /* almost full width on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .chart-box {
+    flex: 1 1 100%; /* full width on small screens */
+    padding: 12px;
+    margin: 8px 0;
+  }
 }
